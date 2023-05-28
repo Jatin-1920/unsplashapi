@@ -1,0 +1,152 @@
+
+body{
+    margin: 0;
+    padding: 0;
+  
+    line-height: 1.5;
+letter-spacing: 1px;
+-webkit-font-smoothing: antialiased;
+
+}
+
+
+*, *::before, *::after {
+box-sizing: border-box;
+}
+/*
+2. Remove default margin
+*/
+* {
+margin: 0;
+}
+/*
+3. Allow percentage-based heights in the application
+*/
+html, body {
+height: auto;
+font-family: 'Patrick Hand', cursive;
+}
+/*
+Typographic tweaks!
+4. Add accessible line-height
+5. Improve text rendering
+*/
+
+/*
+6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
+/*
+7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+font: inherit;
+}
+/*
+8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;
+}
+/*
+9. Create a root stacking context
+*/
+#root, #__next {
+isolation: isolate;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar{
+  width: 20px;
+}
+::-webkit-scrollbar-track{
+  background: linear-gradient(45deg,purple,#f80351,purple);
+}
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(45deg,lightsalmon,#c91c56);
+  border-radius: 1rem;
+}
+.unsplash{
+    display: grid;
+    align-items: start;
+    background-image: url("img/background.jpg");
+   position: relative;
+    background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   min-height: 100vh;
+  }
+
+
+
+.gallery{
+columns: 5;
+object-fit: cover;
+margin:1rem;
+column-gap: .5rem;
+}
+
+.gallery img{
+  margin-bottom: .5rem;
+  vertical-align: middle;
+  transition: all .3s ease-in-out;
+  border: 3px solid;
+ border:1px solid black;
+ border-image-slice: 1;
+}
+
+.input{
+    display: flex;
+    justify-content: center;
+width: 100%;
+height: 80px;
+background: rgb(230, 137, 101,.5);
+padding: 20px;
+border: none;
+outline: none;
+filter: blur(.5px);
+backdrop-filter: blur(2rem);
+-webkit-backdrop-filter: blur(2rem);
+}
+
+
+.search{
+background: rgb(236, 236, 252,.6);
+width: 80%;
+border: 2px solid rgb(1, 145, 145,.6);
+padding: 10px;
+border-right: none;
+letter-spacing: 1px;
+font-weight: bold;
+text-transform: lowercase;
+}
+
+.button{
+  border-left: none;
+border: 2px solid rgb(1, 145, 145,.6);
+background: rgb(1, 145, 145,.6);
+  color:white;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.button:is(:focus-visible,:hover){
+    box-shadow: 0 0 5px 5px lavender;
+}
+.search:is(:focus-visible){
+    box-shadow: 0 0 5px 5px lavender;
+
+}
+
+@media(max-width:700px) {
+  .gallery{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+}
